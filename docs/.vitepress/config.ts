@@ -27,6 +27,7 @@ export default defineConfig({
     ],
   },
   vite: {
+    publicDir: fileURLToPath(new URL('../../public', import.meta.url)),
     resolve: {
       alias: {
         "@": fileURLToPath(new URL("../../src", import.meta.url)),

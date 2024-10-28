@@ -45,10 +45,7 @@ onMounted(async () => {
   const canvas = canvasRef.value;
   const container = containerRef.value;
   if (!canvas || !container) return;
-  const url = new URL(
-    "./assets/model/mao_pro/mao_pro.model3.json",
-    import.meta.url
-  ).pathname;
+  const url = '/model/mao_pro/mao_pro.model3.json';
   live2dViewRef.value = await Live2DModelLipSync.render(canvas, {
     modelURL: url,
     backgroundAlpha: 0,

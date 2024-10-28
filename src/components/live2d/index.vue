@@ -1,13 +1,19 @@
 <template>
+
   <div ref="containerRef" :style="containerStyle">
-    <canvas ref="canvasRef"></canvas>
+    <canvas ref="canvasRef" @click="handleClick"></canvas>
   </div>
+
 </template>
 
 <script setup lang="ts">
-import { computed, CSSProperties, h, onMounted, ref, toRefs, unref } from "vue";
-import { Live2DModelLipSync } from "./assets/sdk/live2d-lip-sync.es";
-import { useResizeObserver } from "@vueuse/core";
+import { computed, CSSProperties, onMounted, ref, toRefs, unref } from "vue";
+
+
+
+import { useData, } from 'vitepress';
+import { toggleTheme } from "./skills/theme";
+import type { Live2DModelView } from "./assets/sdk/live2d-lip-sync.es";
 const props = withDefaults(
   defineProps<{
     width: number;
@@ -20,9 +26,8 @@ const props = withDefaults(
 );
 const canvasRef = ref<HTMLCanvasElement>();
 const containerRef = ref<HTMLElement>();
-
+const live2dViewRef = ref<Live2DModelView>()
 const { width, height } = toRefs(props);
-useResizeObserver(containerRef, () => {});
 const devicePixelRatio = window.devicePixelRatio ?? 1;
 const containerStyle = computed<CSSProperties>(() => ({
   width: unref(width) + "px",
@@ -32,8 +37,11 @@ const containerStyle = computed<CSSProperties>(() => ({
   right: 0,
   bottom: 0,
 }));
-
+const { isDark } = useData()
 onMounted(async () => {
+
+  const { Live2DModelLipSync } = await import("./assets/sdk/live2d-lip-sync.es");
+  const { ColorReplaceFilter } = await import("pixi-filters");
   const canvas = canvasRef.value;
   const container = containerRef.value;
   if (!canvas || !container) return;
@@ -41,12 +49,13 @@ onMounted(async () => {
     "./assets/model/mao_pro/mao_pro.model3.json",
     import.meta.url
   ).pathname;
-  const { model, app } = await Live2DModelLipSync.render(canvas, {
+  live2dViewRef.value = await Live2DModelLipSync.render(canvas, {
     modelURL: url,
     backgroundAlpha: 0,
     resolution: devicePixelRatio,
     autoDensity: true,
   });
+  const { model, app } = live2dViewRef.value
   model.visible = true;
 
   // 获取模型横纵比;
@@ -61,7 +70,19 @@ onMounted(async () => {
     model.y = 0;
   };
   centerModel();
+
+
+
+  const replaceFilter = new ColorReplaceFilter(0x000000, 0xc231f9, 0)
+  // model.filters = [replaceFilter]
+  model.filters = [replaceFilter]
+
 });
+
+async function handleClick(e: MouseEvent) {
+  if (!live2dViewRef.value) return
+  toggleTheme(live2dViewRef.value, isDark)
+}
 </script>
 
 <style scoped></style>

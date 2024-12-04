@@ -1,37 +1,31 @@
 import { fileURLToPath } from "url";
 import { defineConfig } from "vitepress";
-
+import UnoCSS from "unocss/vite";
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: "My Awesome Project",
-  description: "A VitePress Site",
+  title: "LY",
+  description: "文档、工具",
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
-    nav: [
-      { text: "Home", link: "/" },
-      { text: "Examples", link: "/markdown-examples" },
-    ],
+    nav: [],
 
-    sidebar: [
-      {
-        text: "Examples",
-        items: [
-          { text: "Markdown Examples", link: "/markdown-examples" },
-          { text: "Runtime API Examples", link: "/api-examples" },
-        ],
-      },
-    ],
+    sidebar: [],
 
-    socialLinks: [
-      { icon: "github", link: "https://github.com/vuejs/vitepress" },
-    ],
+    socialLinks: [{ icon: "github", link: "https://github.com/liyao1520" }],
   },
   vite: {
-    publicDir: fileURLToPath(new URL('../../public', import.meta.url)),
+    publicDir: fileURLToPath(new URL("../../public", import.meta.url)),
     resolve: {
       alias: {
         "@": fileURLToPath(new URL("../../src", import.meta.url)),
       },
     },
+    plugins: [
+      UnoCSS({
+        configFile: fileURLToPath(
+          new URL("../../uno.config.ts", import.meta.url)
+        ),
+      }),
+    ],
   },
 });

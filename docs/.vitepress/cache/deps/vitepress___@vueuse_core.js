@@ -37,7 +37,7 @@ import {
 } from "./chunk-LPBJEE5X.js";
 import "./chunk-G3PMV62Z.js";
 
-// node_modules/.pnpm/vitepress@1.4.1_@algolia+client-search@4.24.0_@types+node@22.8.1_postcss@8.4.47_search-insights@2.17.2_typescript@5.6.3/node_modules/vitepress/lib/vue-demi.mjs
+// node_modules/.pnpm/vitepress@1.4.1_@algolia+client-search@4.24.0_@types+node@22.8.1_async-validator@4.2.5_postcs_ys2f6ipv6w6yzeumndenu2tpxu/node_modules/vitepress/lib/vue-demi.mjs
 var isVue2 = false;
 var isVue3 = true;
 function set(target, key, val) {

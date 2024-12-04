@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "pnpm docs:dev",
     "build": "vue-tsc -b && vite build",
     "preview": "vite preview",
     "docs:dev": "vitepress dev docs",
@@ -12,9 +12,13 @@
     "docs:preview": "vitepress preview docs"
   },
   "dependencies": {
+    "@ant-design/icons-vue": "^7.0.1",
+    "@bjorn3/browser_wasi_shim": "^0.3.0",
     "@vueuse/core": "^11.1.0",
+    "ant-design-vue": "^4.2.6",
     "pixi-filters": "4.2.0",
     "pixi.js": "6.5.10",
+    "unocss": "^0.64.1",
     "vue": "^3.5.12"
   },
   "devDependencies": {

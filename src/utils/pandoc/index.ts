@@ -5,6 +5,7 @@ import {
   PreopenDirectory,
   WASI,
 } from "@bjorn3/browser_wasi_shim";
+import localforage from "localforage";
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 let instance: any;
 export async function install() {
@@ -29,9 +30,12 @@ export async function install() {
   const options = { debug: false };
   const wasi = new WASI(args, env, fds, options);
 
-  const res = await WebAssembly.instantiateStreaming(fetch("/pandoc.wasm"), {
-    wasi_snapshot_preview1: wasi.wasiImport,
-  });
+  const res = await WebAssembly.instantiateStreaming(
+    fetchWasm("/pandoc.wasm"),
+    {
+      wasi_snapshot_preview1: wasi.wasiImport,
+    }
+  );
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   instance = res.instance;
@@ -75,4 +79,19 @@ export async function install() {
     return out_file.data;
   }
   return { pandoc };
+}
+
+const PANDOC_CACHE_KEY = "pandoc_wasm";
+async function fetchWasm(url: string): Promise<Response> {
+  const cache: Blob | null = await localforage.getItem(PANDOC_CACHE_KEY);
+  if (cache) {
+    console.log("load from cache");
+    return new Response(cache);
+  }
+  const response = await fetch(url);
+  if (response.ok) {
+    const blob = response.clone().blob();
+    localforage.setItem(PANDOC_CACHE_KEY, blob);
+  }
+  return response;
 }

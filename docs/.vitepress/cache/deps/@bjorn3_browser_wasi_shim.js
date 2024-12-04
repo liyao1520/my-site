@@ -1,6 +1,6 @@
 import {
   __export
-} from "./chunk-G3PMV62Z.js";
+} from "./chunk-PR4QN5HX.js";
 
 // node_modules/.pnpm/@bjorn3+browser_wasi_shim@0.3.0/node_modules/@bjorn3/browser_wasi_shim/dist/wasi_defs.js
 var wasi_defs_exports = {};

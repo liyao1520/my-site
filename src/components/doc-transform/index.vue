@@ -8,6 +8,7 @@
         name="file"
         :multiple="false"
         :max-count="1"
+        :before-upload="() => false"
       >
         <p class="ant-upload-drag-icon">
           <inbox-outlined></inbox-outlined>
@@ -90,9 +91,16 @@ onMounted(async () => {
 });
 const fullCmd = computed(() => {
   const { option, outputType } = formData;
+  if (!fileList.value[0]) return;
+  const file = fileList.value[0];
+  // 获取文件名（包含后缀）
+  const fileName = file.name;
+  // 获取文件扩展名（后缀）
+  const inputFileExt = fileName.split(".").pop();
+  const inputFileType = inputExtToType(`.${inputFileExt}`);
   return `pandoc${
     option ? " " + option : ""
-  } -t ${outputType} input_file -o output_file`;
+  } -f ${inputFileType} -t ${outputType} input_file -o output_file`;
 });
 const handleClick = async () => {
   if (!fileList.value[0]) return;

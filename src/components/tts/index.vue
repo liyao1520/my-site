@@ -66,6 +66,9 @@ const handleFinish = async (data: any) => {
       loading.value = false;
     });
   if (res) {
+    if (audioUrl.value) {
+      URL.revokeObjectURL(audioUrl.value);
+    }
     const url = URL.createObjectURL(res);
     audioUrl.value = url;
     nextTick(() => {

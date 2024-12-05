@@ -8,7 +8,7 @@ import Live2d from "@/components/live2d/index.vue";
 import ClientOnly from "@/components/client-only";
 import { ConfigProvider } from "ant-design-vue";
 import { theme } from "ant-design-vue";
-import zhCN from "ant-design-vue/es/locale/zh_CN";
+import zhCN from "ant-design-vue/lib/locale/zh_CN";
 import dayjs from "dayjs";
 import "dayjs/locale/zh-cn";
 dayjs.locale("zh-cn");

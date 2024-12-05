@@ -1,64 +1,61 @@
 {
-  "hash": "fb054b4a",
-  "configHash": "013e2842",
+  "hash": "1f0f4414",
+  "configHash": "1d60bced",
   "lockfileHash": "ff9e9be9",
-  "browserHash": "2fec57bc",
+  "browserHash": "549ecebc",
   "optimized": {
     "vue": {
       "src": "../../../../node_modules/.pnpm/vue@3.5.12_typescript@5.6.3/node_modules/vue/dist/vue.runtime.esm-bundler.js",
       "file": "vue.js",
-      "fileHash": "3ade5832",
+      "fileHash": "8b6c732e",
       "needsInterop": false
     },
     "vitepress > @vue/devtools-api": {
       "src": "../../../../node_modules/.pnpm/@vue+devtools-api@7.5.4/node_modules/@vue/devtools-api/dist/index.js",
       "file": "vitepress___@vue_devtools-api.js",
-      "fileHash": "405ef62a",
+      "fileHash": "29451f44",
       "needsInterop": false
     },
     "vitepress > @vueuse/core": {
       "src": "../../../../node_modules/.pnpm/@vueuse+core@11.1.0_vue@3.5.12_typescript@5.6.3_/node_modules/@vueuse/core/index.mjs",
       "file": "vitepress___@vueuse_core.js",
-      "fileHash": "dcde55ab",
-      "needsInterop": false
-    },
-    "ant-design-vue": {
-      "src": "../../../../node_modules/.pnpm/ant-design-vue@4.2.6_vue@3.5.12_typescript@5.6.3_/node_modules/ant-design-vue/es/index.js",
-      "file": "ant-design-vue.js",
-      "fileHash": "0219e5be",
-      "needsInterop": false
-    },
-    "ant-design-vue/es/locale/zh_CN": {
-      "src": "../../../../node_modules/.pnpm/ant-design-vue@4.2.6_vue@3.5.12_typescript@5.6.3_/node_modules/ant-design-vue/es/locale/zh_CN.js",
-      "file": "ant-design-vue_es_locale_zh_CN.js",
-      "fileHash": "e8d69664",
+      "fileHash": "d5ed0693",
       "needsInterop": false
     },
     "dayjs": {
       "src": "../../../../node_modules/.pnpm/dayjs@1.11.13/node_modules/dayjs/dayjs.min.js",
       "file": "dayjs.js",
-      "fileHash": "f504cc88",
+      "fileHash": "b236efc5",
+      "needsInterop": true
+    },
+    "ant-design-vue": {
+      "src": "../../../../node_modules/.pnpm/ant-design-vue@4.2.6_vue@3.5.12_typescript@5.6.3_/node_modules/ant-design-vue/es/index.js",
+      "file": "ant-design-vue.js",
+      "fileHash": "cf56b26a",
+      "needsInterop": false
+    },
+    "ant-design-vue/lib/locale/zh_CN": {
+      "src": "../../../../node_modules/.pnpm/ant-design-vue@4.2.6_vue@3.5.12_typescript@5.6.3_/node_modules/ant-design-vue/lib/locale/zh_CN.js",
+      "file": "ant-design-vue_lib_locale_zh_CN.js",
+      "fileHash": "167793b7",
       "needsInterop": true
     },
     "dayjs/locale/zh-cn": {
       "src": "../../../../node_modules/.pnpm/dayjs@1.11.13/node_modules/dayjs/locale/zh-cn.js",
       "file": "dayjs_locale_zh-cn.js",
-      "fileHash": "4d072d9e",
+      "fileHash": "6625c4d7",
       "needsInterop": true
     },
     "pixi-filters": {
       "src": "../../../../node_modules/.pnpm/pixi-filters@4.2.0_loysptdgmjku7omjbg7krwlz24/node_modules/pixi-filters/dist/pixi-filters.esm.mjs",
       "file": "pixi-filters.js",
-      "fileHash": "3277a41b",
+      "fileHash": "b19fa71e",
       "needsInterop": false
     }
   },
   "chunks": {
     "chunk-LPBJEE5X": {
       "file": "chunk-LPBJEE5X.js"
-    },
-    "chunk-62KDUREB": {
-      "file": "chunk-62KDUREB.js"
     },
     "chunk-KLOCJB4C": {
       "file": "chunk-KLOCJB4C.js"

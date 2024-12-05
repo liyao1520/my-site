@@ -11,8 +11,8 @@ hero:
       text: 文档转换
       link: /app/doc-transform
     - theme: alt
-      text: API Examples
-      link: /api-examples
+      text: TTS
+      link: /app/tts
 # features:
 #   - title: Feature A
 #     details: Lorem ipsum dolor sit amet, consectetur adipiscing elit

@@ -21,6 +21,7 @@
     "pixi-filters": "4.2.0",
     "pixi.js": "6.5.10",
     "unocss": "^0.64.1",
+    "vitepress-sidebar": "^1.30.2",
     "vue": "^3.5.12"
   },
   "devDependencies": {

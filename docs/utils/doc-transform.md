@@ -1,6 +1,5 @@
 ---
 hiddenLive2d: true
-layout: doc
 aside: false
 ---
 

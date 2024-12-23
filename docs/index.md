@@ -8,11 +8,11 @@ hero:
   tagline: 有点意思
   actions:
     - theme: brand
-      text: 文档转换
-      link: /app/doc-transform
+      text: 文档
+      link: /docs
     - theme: alt
-      text: TTS
-      link: /app/tts
+      text: 工具
+      link: /utils
 # features:
 #   - title: Feature A
 #     details: Lorem ipsum dolor sit amet, consectetur adipiscing elit

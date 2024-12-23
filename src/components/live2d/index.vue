@@ -18,8 +18,8 @@ const props = withDefaults(
     height: number;
   }>(),
   {
-    width: 300,
-    height: 500,
+    width: 200,
+    height: 350,
   }
 );
 
